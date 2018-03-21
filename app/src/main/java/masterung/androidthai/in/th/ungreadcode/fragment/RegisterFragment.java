@@ -25,6 +25,7 @@ public class RegisterFragment extends Fragment{
         Toolbar toolbar = getView().findViewById(R.id.toolbarRegister);
         ((MainActivity)getActivity()).setSupportActionBar(toolbar);
 
+
 //        Setup Title
         ((MainActivity) getActivity()).getSupportActionBar().setTitle("Register");
 
