@@ -7,6 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import masterung.androidthai.in.th.ungreadcode.MainActivity;
 import masterung.androidthai.in.th.ungreadcode.R;
@@ -22,6 +24,31 @@ public class RegisterFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
 
 //        Create Toolbar
+        createToolbar();
+
+//        Register Controller
+        registerController();
+
+
+    }   // Main Method
+
+    private void registerController() {
+        Button button = getView().findViewById(R.id.btnRegister);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                Get Value From EditText
+                EditText nameEditText = getView().findViewById(R.id.edtName);
+                EditText userEditText = getView().findViewById(R.id.edtUser);
+                EditText passwordEditText = getView().findViewById(R.id.edtPassword);
+
+
+            }
+        });
+    }
+
+    private void createToolbar() {
         Toolbar toolbar = getView().findViewById(R.id.toolbarRegister);
         ((MainActivity)getActivity()).setSupportActionBar(toolbar);
 
@@ -39,9 +66,7 @@ public class RegisterFragment extends Fragment{
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
-
-
-    }   // Main Method
+    }
 
     @Nullable
     @Override
