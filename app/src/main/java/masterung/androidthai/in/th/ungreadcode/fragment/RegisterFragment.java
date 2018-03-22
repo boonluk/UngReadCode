@@ -72,6 +72,18 @@ public class RegisterFragment extends Fragment{
                         String result = postUserToServer.get();
                         Log.d("22MarchV1", "Result ==> " + result);
 
+                        if (Boolean.parseBoolean(result)) {
+
+                            getActivity().getSupportFragmentManager().popBackStack();
+
+                        } else {
+
+                            MyAlert myAlert = new MyAlert(getActivity());
+                            myAlert.myDialog("Cannot Post User",
+                                    "Please Try Again");
+
+                        }
+
 
                     } catch (Exception e) {
                         e.printStackTrace();
